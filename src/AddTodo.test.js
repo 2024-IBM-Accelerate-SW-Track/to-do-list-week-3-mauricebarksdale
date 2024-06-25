@@ -21,6 +21,7 @@ afterEach(() => {
 
  test('test that App component doesn\'t render dupicate Task', () => {
   render(<App />);
+  
  });
 
  test('test that App component doesn\'t add a task without task name', () => {
