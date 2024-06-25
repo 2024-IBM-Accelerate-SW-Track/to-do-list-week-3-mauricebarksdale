@@ -91,10 +91,8 @@ test('test that App component doesn\'t add a task without task name', () => {
   fireEvent.change(inputTask, { target: { value: "History Test"}});
   fireEvent.change(inputDate, { target: { value: dueDate}});
   fireEvent.click(element);
-  const check = screen.getByText(/History Test/i);
-  const checkDate = screen.getByText(new RegExp(dueDate, "i"));
-  const taskElement = screen.getByText(/History Test/i).closest('.task');
-  const backgroundColor = window.getComputedStyle(taskElement).backgroundColor;
+  const task = screen.getByText(/History Test/i).closest('.task');
+  const backgroundColor = getComputedStyle(task).background;
   expect(check).toBeInTheDocument();
   expect(checkDate).toBeInTheDocument();
   expect(backgroundColor).toBe('red');
